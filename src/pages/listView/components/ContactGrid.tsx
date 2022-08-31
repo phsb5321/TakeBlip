@@ -4,7 +4,7 @@ import { useMemo } from "react"
 import { ElementCard } from "./ElementCard"
 
 export interface IContactGridProps {
-  onHighlight: (index: string) => void,
+  onHighlight: (contact: IContact) => void,
   contactFilter: (contact: IContact) => boolean,
   contacts: IContact[],
   showHr?: boolean,
@@ -48,7 +48,7 @@ export const ContactGrid = ({
             subtitle={contact.type}
             isHighlighted={contact.isHighlighted}
             color={colors[index % colors.length]}
-            onToggleHighlight={() => onHighlight(contact.name)}
+            onToggleHighlight={() => onHighlight(contact)}
           />
         ))
       }

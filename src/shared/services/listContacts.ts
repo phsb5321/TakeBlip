@@ -6,10 +6,11 @@ export const listContacts = async (): Promise<IContact[]> => {
     `https://front-end-test.beta-cs.blip.ai/bots`
   );
 
-  const contacts = data.map((contact: any) => ({
+  const contacts = data.map((contact: IContact, index: number) => ({
     ...contact,
     created: new Date(contact.created),
     isHighlighted: false,
+    id: index,
   }));
 
   return contacts;

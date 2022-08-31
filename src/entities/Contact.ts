@@ -1,4 +1,5 @@
 export interface IContact {
+  id: number;
   name: string;
   type: string;
   shortName?: string;

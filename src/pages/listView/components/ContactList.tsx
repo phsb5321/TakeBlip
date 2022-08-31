@@ -5,7 +5,7 @@ import { ElementCard } from "./ElementCard"
 import { ElementRow } from "./ElementRow"
 
 export interface IContactListProps {
-  onHighlight: (index: string) => void,
+  onHighlight: (contact: IContact) => void,
   contactFilter: (contact: IContact) => boolean,
   contacts: IContact[],
   showHr?: boolean,
@@ -48,7 +48,7 @@ export const ContactList = ({
             title={contact.name}
             color={colors[index % colors.length]}
             isHighlighted={contact.isHighlighted}
-            onToggleHighlight={() => onHighlight(contact.name)}
+            onToggleHighlight={() => onHighlight(contact)}
             created={new Intl.DateTimeFormat('pt-Br').format(new Date(contact.created))}
           />
         ))
